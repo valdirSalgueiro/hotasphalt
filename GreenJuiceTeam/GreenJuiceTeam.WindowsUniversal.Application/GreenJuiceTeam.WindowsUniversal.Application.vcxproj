@@ -97,6 +97,7 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Image Include="..\res\1.png" />
     <Image Include="..\res\logo.png" />
     <Image Include="Assets\Logo.scale-100.png" />
     <Image Include="Assets\SmallLogo.scale-100.png" />
@@ -119,6 +120,7 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="..\libs\fmod_X64.dll" />
+    <None Include="..\res\engine2_.ogg" />
     <None Include="GreenJuiceTeam_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +130,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\res\collision.wav" />
+    <Media Include="..\res\go.wav" />
+    <Media Include="..\res\nitro.wav" />
+    <Media Include="..\res\select.wav" />
+    <Media Include="..\res\skid.wav" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

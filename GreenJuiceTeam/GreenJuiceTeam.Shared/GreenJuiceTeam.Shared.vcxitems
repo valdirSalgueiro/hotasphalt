@@ -15,9 +15,13 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Background.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Block.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\core\gl2d.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\core\GLES2SpriteBatch.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\core\SpriteBatch.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Easing.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Enemy.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\Engine.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\font\FontAtlas.cpp">
       <ExcludedFromBuild>false</ExcludedFromBuild>
@@ -157,6 +161,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\winfonts\winfnt.c">
       <ExcludedFromBuild>false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\GameController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Player.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\png\png.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngerror.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngget.c" />
@@ -173,7 +179,11 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwrite.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwtran.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwutil.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Polygon.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Road.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\sound\sound.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Tween.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Util.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\adler32.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\compress.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\crc32.c" />

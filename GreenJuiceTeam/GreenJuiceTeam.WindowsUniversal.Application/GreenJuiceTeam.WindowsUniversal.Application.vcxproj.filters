@@ -27,6 +27,9 @@
     <Image Include="..\res\logo.png">
       <Filter>Assets\game</Filter>
     </Image>
+    <Image Include="..\res\1.png">
+      <Filter>Assets\game</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
@@ -37,6 +40,9 @@
     <None Include="$(angle-BinPath)\libEGL.dll" />
     <None Include="$(angle-BinPath)\libGLESv2.dll" />
     <None Include="..\libs\fmod_X64.dll" />
+    <None Include="..\res\engine2_.ogg">
+      <Filter>Assets\game</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Assets">
@@ -45,5 +51,22 @@
     <Filter Include="Assets\game">
       <UniqueIdentifier>{f3528bb0-c8ab-4437-a779-f38bf3c9f0e6}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\res\collision.wav">
+      <Filter>Assets\game</Filter>
+    </Media>
+    <Media Include="..\res\go.wav">
+      <Filter>Assets\game</Filter>
+    </Media>
+    <Media Include="..\res\nitro.wav">
+      <Filter>Assets\game</Filter>
+    </Media>
+    <Media Include="..\res\select.wav">
+      <Filter>Assets\game</Filter>
+    </Media>
+    <Media Include="..\res\skid.wav">
+      <Filter>Assets\game</Filter>
+    </Media>
   </ItemGroup>
 </Project>

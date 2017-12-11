@@ -28,44 +28,76 @@
 
 #endif
 
-#include "core/gl2d.h"
-#include "Vector2D.h"
+#include "font/PreCompile.h"
+#include "font/FontAtlas.h"
+#include "font/FTBitmapFont.h"
 
-template <class T> class Vector2D;
+class GameController;
 
-class Engine{
+#include "Util.h"
+
+class Engine {
 public:
-
-	enum DIRECTION{
-		RIGHT = 1<<0,
-		LEFT  = 1<<1,
-		UP = 1<<2,
-		DOWN = 1<<3
+	enum DIRECTION {
+		RIGHT = 1 << 0,
+		LEFT = 1 << 1,
+		UP = 1 << 2,
+		DOWN = 1 << 3
 	};
 
 	~Engine();
-	Engine();
-	void init(int, int);
-	void update(float);
-	void render(float);
+	void init(int width, int height);
+	void deinit();
+	void update(float time);
+	void render(float time);
+	void playing(float time);
 
-	void setTouch(bool);
+	void handleInput(int type, int x, int y);
+	void control(int type, int x, int y);
+	void setTouch(bool _touch) 
+	{
+		touch = touch;
+	}
 
-	Vector2D<float> controlKnobPos;
-	Vector2D<float> controlBasePos;
+	void reset();
 
-private:	
-	bool touch;
+	//specific methods
+
+	void loadGLTexture(Util::Sprites sprite);
+
+	void loadTextures();
+	//
+
+	enum STATE {
+		LOGO1,
+		LOGO2,
+		MENU1,
+		MENU2,
+		OPTIONS,
+		ABOUT,
+		GARAGE,
+		GARAGE_CONFIRM,
+		GANG1,
+		TITLE,
+		PLAYING,
+		GAMEOVER
+	};
+
+	STATE gameState;
 	int width, height;
+	int dir;
 
-	glImage* logo;
+	bool touch;
 
-	//mobile 
-	glImage* controlBase;
-	glImage* controlKnob;
-	
+private:
+	int frames;
+
+	int loadingScreen;
+
+	//specific
+	GameController* gameController;
+	long lastTimeMillis;
 
 };
-
 
 #endif

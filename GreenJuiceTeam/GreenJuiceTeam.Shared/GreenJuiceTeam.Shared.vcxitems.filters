@@ -247,6 +247,36 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)game\sound\sound.cpp">
       <Filter>game\sound</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\GameController.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Easing.cpp">
+      <Filter>game\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Tween.cpp">
+      <Filter>game\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Background.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Block.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Enemy.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Player.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Polygon.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Road.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Util.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="game">
@@ -272,6 +302,9 @@
     </Filter>
     <Filter Include="game\core">
       <UniqueIdentifier>{7ffe41d1-5853-495b-8c00-70c7df6c6d1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\animation">
+      <UniqueIdentifier>{2cda1318-a00a-4306-a197-f91c745d22b2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
