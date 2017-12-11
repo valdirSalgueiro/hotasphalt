@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Engine.cpp">
+      <Filter>game</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\png.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngerror.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngget.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngmem.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngpread.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngread.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngrio.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngrtran.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngrutil.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngset.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngtest.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngtrans.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwio.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwrite.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwtran.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwutil.c">
+      <Filter>game\thirdparty\png</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\font\FTBitmapFont.cpp">
+      <Filter>game\font</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\font\TreeNode.cpp">
+      <Filter>game\font</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\font\FTBitmapChar.cpp">
+      <Filter>game\font</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\autofit\autofit.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\bdf\bdf.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftbase.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftbbox.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftbdf.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftbitmap.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\bzip2\ftbzip2.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\cache\ftcache.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftcid.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftdebug.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftfntfmt.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftfstype.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftgasp.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftglyph.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftgxval.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\gzip\ftgzip.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftinit.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftlcdfil.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\lzw\ftlzw.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftmm.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftotval.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftpatent.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftpfr.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftstroke.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftsynth.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftsystem.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\fttype1.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftwinfnt.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\pcf\pcf.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\psaux\psaux.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\pshinter\pshinter.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\psnames\psnames.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\raster\raster.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\sfnt\sfnt.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\smooth\smooth.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\truetype\truetype.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\type1\type1.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\cid\type1cid.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\type42\type42.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\winfonts\winfnt.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\font\FontAtlas.cpp">
+      <Filter>game\font</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\adler32.c">
+      <Filter>game\thirdparty\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\compress.c">
+      <Filter>game\thirdparty\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\crc32.c">
+      <Filter>game\thirdparty\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\deflate.c">
+      <Filter>game\thirdparty\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\gzclose.c">
+      <Filter>game\thirdparty\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\gzlib.c">
+      <Filter>game\thirdparty\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\gzread.c">
+      <Filter>game\thirdparty\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\gzwrite.c">
+      <Filter>game\thirdparty\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\infback.c">
+      <Filter>game\thirdparty\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\inffast.c">
+      <Filter>game\thirdparty\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\inflate.c">
+      <Filter>game\thirdparty\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\inftrees.c">
+      <Filter>game\thirdparty\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\trees.c">
+      <Filter>game\thirdparty\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\uncompr.c">
+      <Filter>game\thirdparty\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\zutil.c">
+      <Filter>game\thirdparty\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\cff\cff.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\pfr\pfr.c">
+      <Filter>game\thirdparty\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\core\gl2d.cpp">
+      <Filter>game\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\core\GLES2SpriteBatch.cpp">
+      <Filter>game\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\core\SpriteBatch.cpp">
+      <Filter>game\core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\sound\sound.cpp">
+      <Filter>game\sound</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="game">
+      <UniqueIdentifier>{0e0d8078-deab-485b-ac79-cd04563fe72b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\font">
+      <UniqueIdentifier>{d380a17d-d9ed-4aaa-a140-2611a9510225}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\thirdparty">
+      <UniqueIdentifier>{05c273f7-aaf5-4888-a072-5a459fc460ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\thirdparty\freetype">
+      <UniqueIdentifier>{cddc9855-a21e-4fd8-ad71-5584a7ccb13e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\thirdparty\zlib">
+      <UniqueIdentifier>{0c62a230-b49a-44eb-8b1e-0103c60726c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\thirdparty\png">
+      <UniqueIdentifier>{c120e1ca-f26e-45a2-83e5-5b5bac0f355a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\sound">
+      <UniqueIdentifier>{daf17f3d-e288-4dee-9e86-1aec3d0418a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\core">
+      <UniqueIdentifier>{7ffe41d1-5853-495b-8c00-70c7df6c6d1f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

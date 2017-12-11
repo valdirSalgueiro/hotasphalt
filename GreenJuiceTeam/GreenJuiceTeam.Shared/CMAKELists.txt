@@ -1,0 +1,120 @@
+project(GreenJuiceTeam)
+
+cmake_minimum_required(VERSION 2.8)
+
+set(CMAKE_CXX_FLAGS "-std=c++11" ${CMAKE_CXX_FLAGS})
+
+set(
+	INCLUDE_DIR
+	"game"
+)
+
+
+	
+include_directories (
+"game/freetype"
+"game/sound"
+"game/zlib"
+"game/font"
+"game/png"
+"game/core"
+"game"
+"./"
+"../GreenJuiceTeam.iOS.Application" 
+) 
+
+add_definitions(-DUSEFONT -DFT2_BUILD_LIBRARY -DBOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE -D__WEB__)
+
+set(SOURCES 
+  main.cpp
+  game/png/png.c
+  game/png/pngerror.c
+  game/png/pngget.c
+  game/png/pngmem.c
+  game/png/pngpread.c
+  game/png/pngread.c
+  game/png/pngrio.c
+  game/png/pngrtran.c
+  game/png/pngrutil.c
+  game/png/pngset.c
+  game/png/pngtrans.c
+  game/png/pngwio.c
+  game/png/pngwrite.c
+  game/png/pngwtran.c
+  game/png/pngwutil.c
+  game/freetype/autofit/autofit.c
+  game/freetype/base/ftbase.c
+  game/freetype/base/ftbbox.c
+  game/freetype/base/ftbdf.c
+  game/freetype/base/ftbitmap.c
+  game/freetype/base/ftcid.c
+  game/freetype/base/ftfntfmt.c
+  game/freetype/base/ftfstype.c
+  game/freetype/base/ftgasp.c
+  game/freetype/base/ftglyph.c
+  game/freetype/base/ftgxval.c
+  game/freetype/base/ftinit.c
+  game/freetype/base/ftlcdfil.c
+  game/freetype/base/ftmm.c
+  game/freetype/base/ftotval.c
+  game/freetype/base/ftpatent.c
+  game/freetype/base/ftpfr.c
+  game/freetype/base/ftstroke.c
+  game/freetype/base/ftsynth.c
+  game/freetype/base/ftsystem.c
+  game/freetype/base/fttype1.c
+  game/freetype/base/ftwinfnt.c
+  game/freetype/bdf/bdf.c
+  game/freetype/bzip2/ftbzip2.c
+  game/freetype/cache/ftcache.c
+  game/freetype/cff/cff.c
+  game/freetype/cid/type1cid.c
+  game/freetype/gzip/ftgzip.c
+  game/freetype/lzw/ftlzw.c
+  game/freetype/pcf/pcf.c
+  game/freetype/pfr/pfr.c
+  game/freetype/psaux/psaux.c
+  game/freetype/pshinter/pshinter.c
+  game/freetype/psnames/psnames.c
+  game/freetype/raster/raster.c
+  game/freetype/sfnt/sfnt.c
+  game/freetype/smooth/smooth.c
+  game/freetype/truetype/truetype.c
+  game/freetype/type1/type1.c
+  game/freetype/type42/type42.c
+  game/freetype/winfonts/winfnt.c
+  game/font/FontAtlas.cpp
+  game/font/FTBitmapChar.cpp
+  game/font/FTBitmapFont.cpp
+  game/font/TreeNode.cpp
+  game/core/gl2d.cpp
+  game/core/GLES2SpriteBatch.cpp
+  game/core/SpriteBatch.cpp
+  game/sound/sound.cpp
+  game/zlib/adler32.c
+  game/zlib/compress.c
+  game/zlib/crc32.c
+  game/zlib/deflate.c
+  game/zlib/gzclose.c
+  game/zlib/gzlib.c
+  game/zlib/gzread.c
+  game/zlib/gzwrite.c
+  game/zlib/infback.c
+  game/zlib/inffast.c
+  game/zlib/inflate.c
+  game/zlib/inftrees.c
+  game/zlib/trees.c
+  game/zlib/uncompr.c
+  game/zlib/zutil.c
+  game/Engine.cpp
+)
+
+
+
+set(SOURCE 
+	main.cpp
+)
+
+set(CMAKE_SHARED_LIBRARY_SUFFIX ".bc")
+
+add_library(GreenJuiceTeam SHARED ${SOURCES})

@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{b928ff02-2e96-4281-aa6e-119dc5e626fd}</ItemsProjectGuid>
+    <ItemsProjectName>GreenJuiceTeam.Shared</ItemsProjectName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\core\gl2d.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\core\GLES2SpriteBatch.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\core\SpriteBatch.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Engine.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\font\FontAtlas.cpp">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\font\FTBitmapChar.cpp">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\font\FTBitmapFont.cpp">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\font\TreeNode.cpp">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\autofit\autofit.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftbase.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftbbox.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftbdf.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftbitmap.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftcid.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftdebug.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftfntfmt.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftfstype.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftgasp.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftglyph.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftgxval.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftinit.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftlcdfil.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftmm.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftotval.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftpatent.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftpfr.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftstroke.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftsynth.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftsystem.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\fttype1.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\base\ftwinfnt.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\bdf\bdf.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\bzip2\ftbzip2.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\cache\ftcache.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\cff\cff.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\cid\type1cid.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\gzip\ftgzip.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\lzw\ftlzw.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\pcf\pcf.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\pfr\pfr.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\psaux\psaux.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\pshinter\pshinter.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\psnames\psnames.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\raster\raster.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\sfnt\sfnt.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\smooth\smooth.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\truetype\truetype.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\type1\type1.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\type42\type42.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\freetype\winfonts\winfnt.c">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\png.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngerror.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngget.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngmem.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngpread.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngread.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngrio.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngrtran.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngrutil.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngset.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngtest.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngtrans.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwio.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwrite.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwtran.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwutil.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\sound\sound.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\adler32.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\compress.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\crc32.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\deflate.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\gzclose.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\gzlib.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\gzread.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\gzwrite.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\infback.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\inffast.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\inflate.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\inftrees.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\trees.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\uncompr.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\zlib\zutil.c" />
+  </ItemGroup>
+</Project>
