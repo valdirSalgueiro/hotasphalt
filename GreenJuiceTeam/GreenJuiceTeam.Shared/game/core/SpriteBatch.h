@@ -12,7 +12,6 @@
 
 enum EFFECT{
 	FONT,
-	COLOR_ADVANCED,
 	NONE
 };
 

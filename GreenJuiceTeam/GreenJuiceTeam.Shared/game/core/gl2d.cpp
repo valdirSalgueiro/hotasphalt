@@ -376,10 +376,6 @@ void spriteBatchDraw(int x, int y, int flipmode, const glImage *spr, bool rotate
 		sdi.effect = FONT;
 	}
 
-	if (flipmode & GL2D_COLOR_ADVANCED) {
-		sdi.effect = COLOR_ADVANCED;
-	}
-
 	float param1;
 	float param2;
 	float param3;

@@ -324,9 +324,6 @@ void GLES2SpriteBatch::draw(SpriteDrawInfo *sdi, int spriteCount)
 		if (batchCounter >= BATCH_SIZE)
 			flushSprites();
 
-		if (sdi->effect == COLOR_ADVANCED)
-			flushSprites();
-
 		i++;
 		spriteCount--;
 	}
