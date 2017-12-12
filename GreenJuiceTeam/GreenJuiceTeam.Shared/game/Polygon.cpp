@@ -78,8 +78,8 @@ void Polygon::paintPrimitives(int color, bool drawStartLine,	bool drawBorder) {
 
 
 	if(drawBorder){
-		//Line::draw(topLeft[0], topLeft[1], bottomLeft[0], bottomLeft[1]);
-		//Line::draw(topRight[0], topRight[1], bottomRight[0], bottomRight[1]);
+		spriteDrawLine(topLeft[0], topLeft[1], bottomLeft[0], bottomLeft[1]);
+		spriteDrawLine(topRight[0], topRight[1], bottomRight[0], bottomRight[1]);
 	}
 
 }

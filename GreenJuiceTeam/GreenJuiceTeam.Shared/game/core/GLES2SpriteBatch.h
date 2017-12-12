@@ -25,6 +25,7 @@ public:
     virtual ~GLES2SpriteBatch();
 
     void draw ( SpriteDrawInfo *sdi, int spriteCount=1 );
+	void drawLine(int x1, int y1, int x2, int y2);
     void begin( BlendMode blendMode, TransformMode dTransform = ePIXELSPACE, float *customProjectionMatrix = 0);
     void end();
 

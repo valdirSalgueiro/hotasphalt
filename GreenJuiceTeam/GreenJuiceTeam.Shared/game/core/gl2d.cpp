@@ -330,7 +330,27 @@ void spriteBatchAddQuad(float x1, float y1, float x2, float y2, float x3, float 
 	spriteBatch->draw(&sdi);
 }
 
+void spriteDrawLine(int x1, int y1, int x2, int y2)
+{
+	float scaleX = gWidth / 800.0f;
+	float scaleY = gHeight / 480.0f;
 
+
+	y1 = 480 - y1;
+	y2 = 480 - y2;
+
+	y1 -= 240;
+	y2 -= 240;
+
+	x1 += 400;
+	x2 += 400;
+
+	x1 *= scaleX;
+	y1 *= scaleY;
+	x2 *= scaleX;
+	y2 *= scaleY;
+	spriteBatch->drawLine(x1, y1, x2, y2);
+}
 
 void spriteBatchDraw(int x, int y, int flipmode, const glImage *spr, bool rotate, const float angle, const float scale1, const float scale2, float r, float g, float b, float a, float rb, float gb, float bb, float ab) {
 	SpriteDrawInfo sdi;

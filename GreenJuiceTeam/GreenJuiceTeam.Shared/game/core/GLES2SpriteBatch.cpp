@@ -41,7 +41,7 @@ void main(void)
 {
 	mat4 thisim = im[int(vertex.z)];
 	float thisManual = isManual[int(vertex.z)];
-	if (thisManual > 0.5) 
+	if (thisManual > 0.5)
 	{
 		gl_Position = vec4(vertex.xy, 1, 1) * projMatrix;
 	}
@@ -86,6 +86,25 @@ void main(void)
 });
 
 
+//lines
+const char* strSpriteBatchFragmentShaderLines =
+STRINGIFY(
+	void main(void)
+{
+	gl_FragColor = vec4(1, 1, 1, 1);
+}
+);
+
+const char* strSpriteBatchVertexShaderLines =
+STRINGIFY(
+	attribute highp vec3 vertex;
+uniform mediump mat4 projMatrix;
+
+void main(void)
+{
+	gl_Position = vec4(vertex.xy, 1, 1) * projMatrix;
+});
+
 GLES2SpriteBatch::GLES2SpriteBatch(int w, int h) : SpriteBatch(w, h)
 {
 	for (int f = 0; f < COSINE_TABLE_SIZE; f++)
@@ -96,7 +115,7 @@ GLES2SpriteBatch::GLES2SpriteBatch(int w, int h) : SpriteBatch(w, h)
 	// Initialize shaders
 	GLint retval;
 
-	for (int f = 0; f < 2; f++) {
+	for (int f = 0; f < 3; f++) {
 
 		fragmentShader[f] = glCreateShader(GL_FRAGMENT_SHADER);
 
@@ -106,6 +125,9 @@ GLES2SpriteBatch::GLES2SpriteBatch(int w, int h) : SpriteBatch(w, h)
 			break;
 		case 1:
 			glShaderSource(fragmentShader[f], 1, (const char**)&strSpriteBatchFragmentShaderAlpha, NULL);
+			break;
+		case 2:
+			glShaderSource(fragmentShader[f], 1, (const char**)&strSpriteBatchFragmentShaderLines, NULL);
 			break;
 		}
 
@@ -132,6 +154,9 @@ GLES2SpriteBatch::GLES2SpriteBatch(int w, int h) : SpriteBatch(w, h)
 			break;
 		case 1:
 			glShaderSource(vertexShader[f], 1, (const char**)&strSpriteBatchVertexShaderAlpha, NULL);
+			break;
+		case 2:
+			glShaderSource(vertexShader[f], 1, (const char**)&strSpriteBatchVertexShaderLines, NULL);
 			break;
 		}
 
@@ -296,6 +321,18 @@ void GLES2SpriteBatch::flushSprites()
 	batchCounter = 0;
 }
 
+
+void GLES2SpriteBatch::drawLine(int x1, int y1, int x2, int y2) {
+	setActiveProgram(2);
+	GLfloat vertices[] =
+	{
+		x1, y1, 0,
+		x2, y2, 0
+	};
+
+	glBufferData(GL_ARRAY_BUFFER, 2 * sizeof(GLfloat) * 3, vertices, GL_DYNAMIC_DRAW);
+	glDrawArrays(GL_LINES, 0, 2);
+}
 
 void GLES2SpriteBatch::draw(SpriteDrawInfo *sdi, int spriteCount)
 {

@@ -147,6 +147,7 @@ public:
     virtual void begin( BlendMode bmode = eALPHA, TransformMode dTransform = ePIXELSPACE, float *customProjectionMatrix = 0) {}
     virtual void end() {}
     virtual void draw ( SpriteDrawInfo *sdi, int spriteCount=1 ) = 0;
+	virtual void drawLine(int,int,int,int) = 0;
 
     // Helper draws
     void draw( int texture, float x, float y, float w, float h, float angle = 0.0f );
