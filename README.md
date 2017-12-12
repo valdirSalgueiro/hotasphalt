@@ -27,9 +27,12 @@ Homemade cross platform Open GLES 2.0 engine codenamed "greenjuice team engine"
 
 # Credits
 - Valdir Salgueiro - Developer
-- Leandro Gomes
-- Pedro Vaz
-- Vitor Maciel
+- Leandro Gomes - 2D artist
+- Pedro Vaz - Developer
+- Vitor Maciel - Developer
+- Alain Pierre- 2D artist
+
 
 # License
 - Source code : MIT
+- Assets are licensed to Alain Pierre and Leandro Gomes
