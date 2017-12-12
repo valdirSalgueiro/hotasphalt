@@ -16,10 +16,3 @@ void SpriteBatch::draw( int texture, float x, float y, float w, float h, float a
     sdi.angle = angle;
     draw( &sdi );
 }
-
-#ifdef SPRITE_BATCH_CLASS
-SpriteBatch* SpriteBatch::createInstance(int width, int height, ...)
-	{
-	return new SPRITE_BATCH_CLASS(width, height);
-	}
-#endif

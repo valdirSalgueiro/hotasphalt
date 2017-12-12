@@ -40,9 +40,6 @@
     <None Include="$(angle-BinPath)\libEGL.dll" />
     <None Include="$(angle-BinPath)\libGLESv2.dll" />
     <None Include="..\libs\fmod_X64.dll" />
-    <None Include="..\res\engine2_.ogg">
-      <Filter>Assets\game</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Assets">
@@ -66,6 +63,9 @@
       <Filter>Assets\game</Filter>
     </Media>
     <Media Include="..\res\skid.wav">
+      <Filter>Assets\game</Filter>
+    </Media>
+    <Media Include="..\res\engine2_.wav">
       <Filter>Assets\game</Filter>
     </Media>
   </ItemGroup>

@@ -86,7 +86,7 @@ extern void altInit(int, int);
 float timerGANG;
 
 int selectSND;
-sound* select;
+sound* soundSelect;
 
 FontAtlas* m_pFontAtlas;
 
@@ -157,17 +157,16 @@ void Engine::init(int width_, int height_) {
 	srand(time(NULL));
 	reset();
 
-	//gameState=LOGO1;
-	gameState = MENU1;
-	//gameState=PLAYING;
-
 	gameController = new GameController(this);
-	//apagar
-	//gameController->startGame(0,0,0);
+
+	//gameState=LOGO1;
+	//gameState = MENU1;
+	gameState=PLAYING;
+	gameController->startGame(0, 0, 0);
 
 	loadTextures();
 
-	select = new sound("../res/select.wav", 80, 100, 50);
+	soundSelect = new sound("select.wav", 80, 100, 50);
 
 
 }
@@ -365,14 +364,8 @@ void Engine::update(float time) {
 
 	}
 	if (gameState == GANG1) {
-#ifdef WIN32
 		timerGANG += time;
 		if (timerGANG > 4) {
-#else
-		timerGANG++;
-		if (timerGANG > 60 * 4) {
-#endif
-
 			timerGANG = 0;
 			gameState = PLAYING;
 			gameController->startGame(0, 0, 0);
@@ -571,20 +564,8 @@ void Engine::handleInput(int type, int x, int y) {
 	scaleX = width / 800.0f;
 	scaleY = height / 480.0f;
 
-#ifndef WIN32
-	//__android_log_print(ANDROID_LOG_INFO, "HOTASPHALT","********************************");
-	//__android_log_print(ANDROID_LOG_INFO, "HOTASPHALT","%d %d %d %f %f", type, x,y, scaleX, scaleY);
-	//__android_log_print(ANDROID_LOG_INFO, "HOTASPHALT","********************************");
-#endif
-
 	x /= scaleX;
 	y /= scaleY;
-
-#ifdef WIN32
-	if (type == 1 || type == 6) {
-		return;
-	}
-#endif
 
 	if (gameState == MENU2) {
 		//center
@@ -606,13 +587,7 @@ void Engine::handleInput(int type, int x, int y) {
 					if (i == 3) {
 						gameState = ABOUT;
 					}
-#ifdef WIN32
-					//select->play(false);
-#else
-					JNIUtil::jni_sound_play(selectSND, 0);
-#endif
-
-
+					soundSelect->play();
 				}
 				else {
 					selectedOption = i;
@@ -625,11 +600,7 @@ void Engine::handleInput(int type, int x, int y) {
 	else if (gameState == OPTIONS) {
 		if ((x > 0 && x < 150) && (y > 380 && y < 480)) {
 			reset(); //back menu
-#ifdef WIN32
-					 //select->play(false);
-#else
-			JNIUtil::jni_sound_play(selectSND, 0);
-#endif
+			soundSelect->play();
 			return;
 		}
 
@@ -656,11 +627,7 @@ void Engine::handleInput(int type, int x, int y) {
 					Util::accel = false;
 
 				}
-#ifdef WIN32
-				//select->play(false);
-#else
-				JNIUtil::jni_sound_play(selectSND, 0);
-#endif
+				soundSelect->play();
 				break;
 			}
 		}
@@ -669,19 +636,13 @@ void Engine::handleInput(int type, int x, int y) {
 	else if (gameState == GARAGE || gameState == GARAGE_CONFIRM) {
 		if ((x > 450 && x < 650) && (y > 330 && y < 380)) {
 			gameState = GARAGE_CONFIRM;
-#ifdef WIN32
-			//select->play(false);
-#else
-			JNIUtil::jni_sound_play(selectSND, 0);
-#endif
+			soundSelect->play();
 			return;
 		}
 
 		if ((x > 0 && x < 150) && (y > 0 && y < 150)) {
 			reset(); //back menu
-#ifdef WIN32
-					 //select->play(false);
-#endif
+			soundSelect->play();
 			return;
 		}
 

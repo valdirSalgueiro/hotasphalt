@@ -289,6 +289,47 @@ void spriteBatchDestroy() {
 	delete spriteBatch;
 }
 
+void spriteBatchAddQuad(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, float r, float g, float b, float a, int textureid) {
+	float scaleX;
+	float scaleY;
+
+	scaleX = gWidth / 800.0f;
+	scaleY = gHeight / 480.0f;
+
+	y1 = 480 - y1;
+	y2 = 480 - y2;
+	y3 = 480 - y3;
+	y4 = 480 - y4;
+
+	y1 -= 240;
+	y2 -= 240;
+	y3 -= 240;
+	y4 -= 240;
+
+	x1 += 400;
+	x2 += 400;
+	x3 += 400;
+	x4 += 400;
+
+	x1 *= scaleX;
+	y1 *= scaleY;
+	x2 *= scaleX;
+	y2 *= scaleY;
+	x3 *= scaleX;
+	y3 *= scaleY;
+	x4 *= scaleX;
+	y4 *= scaleY;
+
+	SpriteDrawInfo sdi;
+
+	sdi.manualTransform(x1, y1, x2, y2, x4, y4, x3, y3);
+	sdi.setColor(r, g, b, a);
+	sdi.textureHandle = textureid;
+
+
+	spriteBatch->draw(&sdi);
+}
+
 
 
 void spriteBatchDraw(int x, int y, int flipmode, const glImage *spr, bool rotate, const float angle, const float scale1, const float scale2, float r, float g, float b, float a, float rb, float gb, float bb, float ab) {

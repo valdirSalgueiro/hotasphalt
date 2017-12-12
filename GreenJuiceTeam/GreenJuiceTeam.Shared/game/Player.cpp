@@ -38,9 +38,9 @@ Player::Player(int car){
 	numberOfNitros=0;
 	selectedChar=0;
 
-	skid=new sound("../res/skid.wav",80,100,50);
-	nitroSND=new sound("../res/nitro.wav",100,100,50);
-	collisionSND=new sound("../res/collision.wav",80,100,50);
+	skid=new sound("skid.wav",80,100,50);
+	nitroSND=new sound("nitro.wav",100,100,50);
+	collisionSND=new sound("collision.wav",80,100,50);
 	position = std::vector<int>(3);
 	view = std::vector<int>(3);
 	refPos =  std::vector<int>(2);
@@ -65,7 +65,7 @@ void Player::useNitro(){
 	}
 	else{
 		if(!nitro && numberOfNitros > 0){ //check if there's nitros availables
-			//nitroSND->play(false);
+			nitroSND->play();
 			nitro = true; //set this bool to indicate that the car is using nitro
 			numberOfNitros--; //reduce the number of available nitros
 		}
@@ -225,7 +225,7 @@ void Player::update(int keyPressing,std::vector<Enemy*> enemies,std::vector<Bloc
 					speedAxisX = -HORIZONTAL_SPEED;
 				}
 			}
-			//skid->play(true);
+			skid->play();
 		}
 
 	}
@@ -245,7 +245,7 @@ void Player::update(int keyPressing,std::vector<Enemy*> enemies,std::vector<Bloc
 					speedAxisX = HORIZONTAL_SPEED;
 				}
 			}
-			//skid->play(true);
+			skid->play();
 		}
 	}
 	else{
@@ -319,7 +319,7 @@ void Player::update(int keyPressing,std::vector<Enemy*> enemies,std::vector<Bloc
 	Enemy* collisionEnemy = hasCollisionWithEnemies(futureX,futureZ,enemies);
 
 	if(collisionEnemy != NULL){
-		//collisionSND->play(false);
+		collisionSND->play();
 		//position[Z] = collisionEnemy->position[Z] - Util::CAR_LENGTH;
 		position[Z] = collisionEnemy->position[Z] - 25;
 		//update the axis positions

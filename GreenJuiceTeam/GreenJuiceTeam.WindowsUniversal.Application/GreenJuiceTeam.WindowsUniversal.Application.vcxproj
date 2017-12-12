@@ -120,7 +120,6 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="..\libs\fmod_X64.dll" />
-    <None Include="..\res\engine2_.ogg" />
     <None Include="GreenJuiceTeam_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <Media Include="..\res\collision.wav" />
+    <Media Include="..\res\engine2_.wav" />
     <Media Include="..\res\go.wav" />
     <Media Include="..\res\nitro.wav" />
     <Media Include="..\res\select.wav" />

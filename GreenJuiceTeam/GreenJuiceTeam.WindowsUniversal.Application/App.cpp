@@ -78,6 +78,8 @@ void App::SetWindow(CoreWindow^ window)
 
 	window->KeyDown += ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &App::OnKeyDown);
 	window->KeyUp += ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &App::OnKeyUp);
+	window->PointerPressed += ref new TypedEventHandler<CoreWindow^, PointerEventArgs^>(this, &App::OnPointerDown);
+	window->PointerReleased += ref new TypedEventHandler<CoreWindow^, PointerEventArgs^>(this, &App::OnPointerUp);
 
 	// The CoreWindow has been created, so EGL can be initialized.
 	InitializeEGL(window);
@@ -213,6 +215,15 @@ static void tracef(char* lpszBuffer)
 #endif
 }
 
+void App::OnPointerDown(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::PointerEventArgs^ args)
+{
+	engine->handleInput(0, args->CurrentPoint->Position.X, args->CurrentPoint->Position.Y);
+}
+
+void App::OnPointerUp(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::PointerEventArgs^ args)
+{
+}
+
 void App::OnKeyDown(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::KeyEventArgs^ args)
 {
 	if (args->VirtualKey == Windows::System::VirtualKey::Right)
@@ -227,8 +238,6 @@ void App::OnKeyDown(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::Ke
 
 	if (args->VirtualKey == Windows::System::VirtualKey::Space)
 		engine->setTouch(true);
-
-
 }
 
 void App::OnKeyUp(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::KeyEventArgs^ args)

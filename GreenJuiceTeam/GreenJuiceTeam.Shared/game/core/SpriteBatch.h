@@ -82,6 +82,18 @@ struct SpriteDrawInfo
         scaleY = scaleYi;
     }
 
+	void manualTransform(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4) {
+		manualTransformMatrix[0][0] = x1;
+		manualTransformMatrix[0][1] = y1;
+		manualTransformMatrix[1][0] = x2;
+		manualTransformMatrix[1][1] = y2;
+		manualTransformMatrix[2][0] = x3;
+		manualTransformMatrix[2][1] = y3;
+		manualTransformMatrix[3][0] = x4;
+		manualTransformMatrix[3][1] = y4;
+		manualTransformActive = true;
+	}
+
         // Texture handle
     unsigned int textureHandle;
 

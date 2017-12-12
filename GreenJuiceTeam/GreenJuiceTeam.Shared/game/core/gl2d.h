@@ -91,6 +91,7 @@ void spriteBatchDestroy();
 
 void startBatch( const int width, const int height );
 
+void spriteBatchAddQuad(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, float r, float g, float b, float a, int textureid);
 void spriteBatchDraw(int x, int y, int flipmode, const glImage *spr,bool rotate=false,const float angle=0.0f, const float scale1=1, const float scale2=1, float r=1, float g=1, float b=1, float a=1, float rb=1, float gb=1, float bb=1, float ab=1);
 
 void glFree();

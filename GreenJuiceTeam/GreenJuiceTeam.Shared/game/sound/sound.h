@@ -79,7 +79,7 @@ namespace FMOD {
 class sound
 {
 private:
-	//FMOD::Channel *chan;
+	FMOD::Channel *chan;
 	void *data;
 	char *filename;
 	int volume;
@@ -110,7 +110,11 @@ public:
 	/*
 		Plays this sound once
 	*/
-	void play();
+	void play(bool play = false);
+
+	void stop();
+
+	void setPitch(float);
 	/*
 		Gets filename
 	*/

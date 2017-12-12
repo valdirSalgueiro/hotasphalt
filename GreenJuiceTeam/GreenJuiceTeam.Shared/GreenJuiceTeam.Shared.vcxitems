@@ -179,7 +179,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwrite.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwtran.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\png\pngwutil.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)game\Polygon.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)game\Polygon.cpp">
+      <ExcludedFromBuild>false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)game\Road.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\sound\sound.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)game\Tween.cpp" />

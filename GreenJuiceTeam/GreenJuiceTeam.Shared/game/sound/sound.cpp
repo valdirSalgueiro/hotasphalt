@@ -472,13 +472,17 @@ void sound::pool(char *f)
 		return;
 	}
 
-
-	/* Add it to the list */
+		/* Add it to the list */
 	fmod_sound_list.push_back(se);
 	/* Now I have data */
 	data = se;
 	/* Done */
 	puts("Loaded the sound.");
+}
+
+void sound::stop() 
+{
+	chan->stop();
 }
 
 /* Initialize sound */
@@ -495,8 +499,7 @@ void sound::init(char *f, int v, int t, int b)
 
 /* Delete sound */
 sound :: ~sound()
-{
-	free(filename);
+{	
 }
 
 /* Make sound */
@@ -506,10 +509,8 @@ sound::sound(char *f, int v, int t, int b)
 	init(f, v, t, b);
 }
 
-FMOD::Channel *chan = 0;
-
 /* Play sound once */
-void sound::play()
+void sound::play(bool loop)
 {
 	float hz, bl;
 
@@ -530,6 +531,9 @@ void sound::play()
 		printf("Could not play sound %s", ((sound_entry*)data)->filename);
 		return;
 	}
+
+	if(loop)
+		chan->setMode(FMOD_LOOP_NORMAL);
 
 	/* Adjust its volume */
 	if (chan->setVolume((float)(volume) / 100.0f) != FMOD_OK)
@@ -562,8 +566,14 @@ void sound::play()
 		printf("Could not play sound after applying settings for sound %s", ((sound_entry*)data)->filename);
 		return;
 	}
+
 	/* Rotate */
 	fmod_channel_rotate = (fmod_channel_rotate + 1) % (WCSOUND_MAX_SOUNDS / 2);
+}
+
+void sound::setPitch(float pitch) 
+{
+	chan->setPitch(pitch);
 }
 
 /* Get file */

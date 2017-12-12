@@ -3,7 +3,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <DebuggerType>NativeOnly</DebuggerType>
     <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
-    <AndroidDeviceID>emulator-5554;Android_Accelerated_Nougat</AndroidDeviceID>
+    <AndroidDeviceID>G4AZB602K855EAJ;</AndroidDeviceID>
     <LaunchActivity>.Main</LaunchActivity>
   </PropertyGroup>
 </Project>

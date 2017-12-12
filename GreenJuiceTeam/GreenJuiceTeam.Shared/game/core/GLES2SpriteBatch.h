@@ -35,6 +35,7 @@ protected:
     float cosineTable[COSINE_TABLE_SIZE];
     float inputMatrixTemp[ BATCH_SIZE * 16 ];
 	float colorTemp[ BATCH_SIZE * 4 ];
+	float tempVertices[BATCH_SIZE * 18];
 
     SpriteDrawInfo batchCollection[ BATCH_SIZE ];
     int batchCounter;
@@ -61,12 +62,13 @@ protected:
 
     // Some locations to the program
     GLuint inputMatrixLocation[4];
-	GLuint colorLocation[4];
     GLuint projmLocation[4];
     GLuint samplerLocation[4];
+	GLuint isManual[4];
 
+	float isManualParam[BATCH_SIZE];
 
-    GLuint vbo;
+	GLuint vbo;
 };
 
 #endif
