@@ -521,10 +521,10 @@ void sound::play(bool loop)
 		return;
 
 	///* Stop old */
-	//bool playing;
-	//chan->isPlaying(&playing);
-	//if(playing)
-	//	chan->stop();
+	bool playing;
+	chan->isPlaying(&playing);
+	if (playing)
+		return;// chan->stop();
 	/* Prepare the sound to play */
 	if (fmod_sound_system->playSound(((sound_entry*)data)->snd, 0, false, &chan) != FMOD_OK)
 	{

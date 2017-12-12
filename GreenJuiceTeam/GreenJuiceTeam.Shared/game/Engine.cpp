@@ -160,15 +160,13 @@ void Engine::init(int width_, int height_) {
 	gameController = new GameController(this);
 
 	//gameState=LOGO1;
-	//gameState = MENU1;
-	gameState=PLAYING;
-	gameController->startGame(0, 0, 0);
+	gameState = MENU1;
+	//gameState=PLAYING;
+	//gameController->startGame(0, 0, 0);
 
 	loadTextures();
 
 	soundSelect = new sound("select.wav", 80, 100, 50);
-
-
 }
 
 Engine::~Engine() {
@@ -381,7 +379,6 @@ void Engine::update(float time) {
 
 	}
 
-
 	if (gameState == PLAYING || gameState == GAMEOVER)
 		playing(time);
 
@@ -533,9 +530,10 @@ void Engine::render(float time) {
 
 
 void Engine::playing(float time) {
-	if (frames % 4 == 0) {
-		//if(frames%3==0){
-		gameController->update(dir);
+	if (frames % 4 == 0) 
+	{
+		gameController->setKeypress(dir);
+		gameController->update();
 	}
 }
 
@@ -556,6 +554,15 @@ void Engine::control(int type, int x, int y) {
 		dir = RIGHT;
 	}
 }
+
+void Engine::setDir(int dir) 
+{
+	if(gameController!=NULL && gameState == Engine::PLAYING)
+	{
+		this->dir = dir;
+	}
+}
+
 
 void Engine::handleInput(int type, int x, int y) {
 	float scaleX;

@@ -4,12 +4,13 @@
 #include <GL/glfw.h>
 #include <emscripten/emscripten.h>
 #include "Engine.h"
+#include "util.h"
 
 int init_gl(void);
 void do_frame();
 void shutdown_gl();
 
-Engine* engine;
+Engine* gameEngine;
 const int width = 800,height = 480;
 int dir;
 			
@@ -17,9 +18,9 @@ void GLFWCALL keyfun(int key, int action);
 			
 int main(void) 
 {
-	engine = new Engine();
+	gameEngine = new Engine();
 	if (init_gl() == GL_TRUE) {		
-		engine->init(width,height);
+		gameEngine->init(width,height);
 		emscripten_set_main_loop(do_frame, 0, 1);
 	}
 		
@@ -48,36 +49,36 @@ int init_gl()
 void GLFWCALL keyfun(int key, int action) {
 	if (key == GLFW_KEY_SPACE  )
 		if(action == GLFW_RELEASE)
-			engine->setTouch(false);
+			gameEngine->setTouch(false);
 		else
-			engine->setTouch(true);
+			gameEngine->setTouch(true);
 		
 	if(action == GLFW_RELEASE){
 		if (key == GLFW_KEY_RIGHT)
-			dir &= ~Engine::DIRECTION::RIGHT;
+			dir &= ~DIRECTION::RIGHT;
 
 		if (key == GLFW_KEY_LEFT)
-			dir &= ~Engine::DIRECTION::LEFT;
+			dir &= ~DIRECTION::LEFT;
 
 		if (key == GLFW_KEY_UP)
-			dir &= ~Engine::DIRECTION::UP;
+			dir &= ~DIRECTION::UP;
 
 		if (key == GLFW_KEY_DOWN)
-			dir &= ~Engine::DIRECTION::DOWN;
+			dir &= ~DIRECTION::DOWN;
 	}
 	else
 	{
 		if (key == GLFW_KEY_RIGHT)
-			dir |= Engine::DIRECTION::RIGHT;
+			dir |= DIRECTION::RIGHT;
 
 		if (key == GLFW_KEY_LEFT)
-			dir |= Engine::DIRECTION::LEFT;
+			dir |= DIRECTION::LEFT;
 
 		if (key == GLFW_KEY_UP)
-			dir |= Engine::DIRECTION::UP;
+			dir |= DIRECTION::UP;
 
 		if (key == GLFW_KEY_DOWN)
-			dir |= Engine::DIRECTION::DOWN;		
+			dir |= DIRECTION::DOWN;		
 	}
 		
 }
@@ -85,8 +86,16 @@ void GLFWCALL keyfun(int key, int action) {
 
 void do_frame()
 {	
-	engine->update(1.0f/60.0f);
-	engine->render(1.0f/60.0f);
+	int state = glfwGetMouseButton(GLFW_MOUSE_BUTTON_LEFT);
+	if (state == GLFW_PRESS)
+	{
+		int xpos, ypos;
+		glfwGetMousePos (&xpos, &ypos);
+		gameEngine->handleInput(0, xpos, ypos);
+	}
+	gameEngine->setDir(dir);
+	gameEngine->update(1.0f/60.0f);
+	gameEngine->render(1.0f/60.0f);
 	glfwSwapBuffers();
 }
 

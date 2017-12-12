@@ -5,6 +5,7 @@
 #include "pch.h"
 #include "app.h"
 #include "..\GreenJuiceTeam.Shared\game\Engine.h"
+#include "..\GreenJuiceTeam.Shared\game\util.h"
 
 using namespace Windows::ApplicationModel::Core;
 using namespace Windows::ApplicationModel::Activation;
@@ -118,6 +119,7 @@ void App::Run()
 
 			ProcessInput();
 
+			engine->setDir(dir);
 			engine->update(FPS);
 			engine->render(FPS);
 
@@ -163,13 +165,13 @@ void GreenJuiceTeam::App::ProcessInput()
 	if ((oppositeSquared + adjacentSquared) > deadzoneSquared)
 	{
 		if (leftStickX <= -0.1)
-			dir |= Engine::DIRECTION::LEFT;
+			dir |= DIRECTION::LEFT;
 		else if (leftStickX >= 0.1)
-			dir |= Engine::DIRECTION::RIGHT;
+			dir |= DIRECTION::RIGHT;
 		if (leftStickY <= -0.1)
-			dir |= Engine::DIRECTION::DOWN;
+			dir |= DIRECTION::DOWN;
 		else if (leftStickY >= 0.1)
-			dir |= Engine::DIRECTION::UP;
+			dir |= DIRECTION::UP;
 	}
 
 	if ((m_reading.Buttons & GamepadButtons::A) == GamepadButtons::A)
@@ -217,24 +219,37 @@ static void tracef(char* lpszBuffer)
 
 void App::OnPointerDown(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::PointerEventArgs^ args)
 {
-	engine->handleInput(0, args->CurrentPoint->Position.X, args->CurrentPoint->Position.Y);
+	if (engine->gameState != Engine::PLAYING)
+	{
+		engine->handleInput(0, args->CurrentPoint->Position.X, args->CurrentPoint->Position.Y);
+	}
+	else 
+	{
+		engine->control(0, args->CurrentPoint->Position.X, args->CurrentPoint->Position.Y);
+	}
 }
 
 void App::OnPointerUp(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::PointerEventArgs^ args)
 {
+	if (engine->gameState != Engine::PLAYING) {
+		engine->handleInput(1, args->CurrentPoint->Position.X, args->CurrentPoint->Position.Y);
+	}
+	else {
+		engine->dir = 0;
+	}
 }
 
 void App::OnKeyDown(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::KeyEventArgs^ args)
 {
 	if (args->VirtualKey == Windows::System::VirtualKey::Right)
-		dir |= Engine::DIRECTION::RIGHT;
+		dir |= DIRECTION::RIGHT;
 	else if (args->VirtualKey == Windows::System::VirtualKey::Left)
-		dir |= Engine::DIRECTION::LEFT;
+		dir |= DIRECTION::LEFT;
 
 	if (args->VirtualKey == Windows::System::VirtualKey::Up)
-		dir |= Engine::DIRECTION::UP;
+		dir |= DIRECTION::UP;
 	else if (args->VirtualKey == Windows::System::VirtualKey::Down)
-		dir |= Engine::DIRECTION::DOWN;
+		dir |= DIRECTION::DOWN;
 
 	if (args->VirtualKey == Windows::System::VirtualKey::Space)
 		engine->setTouch(true);
@@ -243,16 +258,16 @@ void App::OnKeyDown(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::Ke
 void App::OnKeyUp(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::KeyEventArgs^ args)
 {
 	if (args->VirtualKey == Windows::System::VirtualKey::Right)
-		dir &= ~Engine::DIRECTION::RIGHT;
+		dir &= ~DIRECTION::RIGHT;
 
 	if (args->VirtualKey == Windows::System::VirtualKey::Left)
-		dir &= ~Engine::DIRECTION::LEFT;
+		dir &= ~DIRECTION::LEFT;
 
 	if (args->VirtualKey == Windows::System::VirtualKey::Up)
-		dir &= ~Engine::DIRECTION::UP;
+		dir &= ~DIRECTION::UP;
 
 	if (args->VirtualKey == Windows::System::VirtualKey::Down)
-		dir &= ~Engine::DIRECTION::DOWN;
+		dir &= ~DIRECTION::DOWN;
 
 	if (args->VirtualKey == Windows::System::VirtualKey::Space)
 		engine->setTouch(false);
@@ -390,7 +405,7 @@ void App::InitializeEGL(CoreWindow^ window)
 
 	//Size customRenderSurfaceSize = Size(800, 480);
 	//surfaceCreationProperties->Insert(ref new String(EGLRenderSurfaceSizeProperty), PropertyValue::CreateSize(customRenderSurfaceSize));
-	
+
 
 	mEglSurface = eglCreateWindowSurface(mEglDisplay, config, reinterpret_cast<IInspectable*>(surfaceCreationProperties), surfaceAttributes);
 	if (mEglSurface == EGL_NO_SURFACE)

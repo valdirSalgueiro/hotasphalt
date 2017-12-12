@@ -362,7 +362,6 @@ void Road::updateRaceRank() {
 	}
 	Util::quickSort(&raceEndRank);
 
-	//TODO: [Pedro]se os Z forem iguais, irá repetir um jogador.
 	for (int j = 0; j < raceEndRank.size(); j++) {
 		int z = raceEndRank[j];
 		if (z == player->position[Z]) {
@@ -427,10 +426,12 @@ void Road::paint(bool isPaused) {
 
 		if (!paintSinal) {
 
+#ifdef __ANDROID_API__ || __APPLE__
 			if (!Util::accel) {
 				spriteBatchDraw(0, 240, GL2D_CENTER_VERTICAL | GL2D_FLIP_H, Util::textures[Util::JOYPAD], false, 0, 1, 1, 1, 1, 1, 0.5f);
 				spriteBatchDraw(800 - 64, 240, GL2D_CENTER_VERTICAL, Util::textures[Util::JOYPAD], false, 0, 1, 1, 1, 1, 1, 0.5f);
 			}
+#endif
 			spriteBatchDraw(14, 30, 0, Util::textures[Util::SHADE1]);
 			spriteBatchDraw(800 - 14, 480 - 30, GL2D_BOTTOM | GL2D_RIGHT, Util::textures[Util::SHADE2]);
 
@@ -441,9 +442,8 @@ void Road::paint(bool isPaused) {
 			std::stringstream st;
 			st << speed;
 			speedStr = st.str();
-#ifdef FONT
 			m_pFontAtlas->GetFont(0)->DrawString(693, 400, speedStr, WHITE);
-#endif
+
 			int playerPos;
 			for (int i = 0; i < 5; i++) {
 				if (raceEndRank[i] == 0)

@@ -51,15 +51,6 @@ void GameController::startGame(int world,int track, int player) {
 void GameController::pauseGame() {
 	// Evaluate the state to next game resume.
 	if (gameState != GAME_STATE_PAUSED) {
-		//[Pedro] fix to make the time stop while paused
-		//
-		//road->pausedTime = System.currentTimeMillis(); 
-
-		//[Pedro] release some images that don't appear on pause menu
-		//road->freeObjectsForPauseMenu();
-		//background->freeImages();
-		//
-
 
 		resumeGameState = gameState;
 		gameState = GAME_STATE_PAUSED;
@@ -73,14 +64,18 @@ void GameController::resumeGame() {
 	gameState = resumeGameState;
 }
 
+void GameController::setKeypress(int keyCode) {
+	keyPressing = keyCode; 
+}
+
 /**
 * Updates the game state. It's called each game clock milliseconds.
 * 
 * @param keyStates
 *            The state of device keys.
 */
-void GameController::update(int keyCode) {
-	processGameUpdate(keyCode);
+void GameController::update() {
+	processGameUpdate();
 }
 
 /**
@@ -89,13 +84,7 @@ void GameController::update(int keyCode) {
 * @param keyStates
 *            The state of device keys.
 */
-void GameController::processGameUpdate(int keyCode) {
-	//int keyPressing = MainCanvas.getKeyStates(true);
-	//
-	//so p testar
-	int keyPressing=keyCode;
-
-	//int keyPressed = MainCanvas.getKeyStates(false);
+void GameController::processGameUpdate() {
 
 	switch(gameState){
 	case GAME_STATE_PLAYING_IDLE:

@@ -125,8 +125,6 @@ bool Player::isOutOfRoad(int futureX, int futureZ, std::vector<Block*> blocks){
 			int left = blocks[i]->position[X] - (blocks[i]->getWidth()/2);
 			int right = blocks[i]->position[X] + (blocks[i]->getWidth()/2);
 
-			//[Pedro] bug fix. On the first time this method is called, the values (left,right) are equal zero
-			//this check is to avoid 
 			if(left != right){
 				if( futureX < left){ //check if the player if out left
 					out = true;
@@ -198,7 +196,6 @@ Enemy* Player::hasCollisionWithEnemies(int futureX, int futureZ, std::vector<Ene
 void Player::update(int keyPressing,std::vector<Enemy*> enemies,std::vector<Block*> blocks){
 
 	//printf("%d\n",keyPressing);
-	//int nitro_button=keyPressing & (1 << KeyEvent.KEYCODE_DPAD_CENTER), left=keyPressing & (1 << KeyEvent.KEYCODE_DPAD_LEFT), right=keyPressing & (1 << KeyEvent.KEYCODE_DPAD_RIGHT), down=keyPressing & (1 << KeyEvent.KEYCODE_DPAD_DOWN);
 	int nitro_button=keyPressing & UP;
 	int left=keyPressing & LEFT;
 	int right=keyPressing & RIGHT;
@@ -249,7 +246,7 @@ void Player::update(int keyPressing,std::vector<Enemy*> enemies,std::vector<Bloc
 		}
 	}
 	else{
-
+		skid->stop();
 		//this the player isn't pressing left or right keys, the curve tick should go to zero.
 		if(curve > 0){
 			curve--;

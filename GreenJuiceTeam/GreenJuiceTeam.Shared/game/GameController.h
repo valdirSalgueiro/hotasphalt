@@ -84,7 +84,7 @@ public:
 	 * @param keyStates
 	 *            The state of device keys.
 	 */
-	void update(int keyCode);
+	void update();
 
 	/**
 	 * Process the update of the playing state.
@@ -92,7 +92,7 @@ public:
 	 * @param keyStates
 	 *            The state of device keys.
 	 */
-	void processGameUpdate(int keyCode);
+	void processGameUpdate();
 
 
 
@@ -110,6 +110,8 @@ public:
 	
 	int getPlayerSelectedChar();
 
+	void setKeypress(int);
+
 	/**
 	 * Returns the state of the game.
 	 * 
@@ -122,4 +124,6 @@ public:
 	std::vector<int> getRaceEndRanking();
 
 	Engine* engine;
+
+	int keyPressing;
 };

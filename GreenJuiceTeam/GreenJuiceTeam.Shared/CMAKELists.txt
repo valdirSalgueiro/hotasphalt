@@ -106,6 +106,17 @@ set(SOURCES
   game/zlib/trees.c
   game/zlib/uncompr.c
   game/zlib/zutil.c
+  game/Background.cpp
+  game/Block.cpp
+  game/Easing.cpp
+  game/Enemy.cpp
+  game/GameController.cpp
+  game/Player.cpp
+  game/Polygon.cpp
+  game/Road.cpp
+  game/sound/sound.cpp
+  game/Tween.cpp
+  game/Util.cpp
   game/Engine.cpp
 )
 
